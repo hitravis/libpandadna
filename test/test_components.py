@@ -226,7 +226,7 @@ class TestComponents(unittest.TestCase):
         visgroup.addVisible('test2')
         visgroup.addVisible('test3')
         self.assertEqual(visgroup.getNumVisibles(), 3)
-        for i in xrange(1, 4):
+        for i in range(1, 4):
             self.assertEqual(visgroup.getVisible(i - 1), 'test%d' % i)
 
         self.assertTrue(visgroup.removeVisible('test1'))

@@ -40,7 +40,7 @@ class TestLoader(unittest.TestCase):
         self.assertEqual(store.getDNAVisGroupName(0), "1000")
         self.assertEqual(store.getNumSuitPoints(), 4)
 
-        for i in xrange(store.getNumSuitPoints()):
+        for i in range(store.getNumSuitPoints()):
             point = store.getSuitPointAtIndex(i)
             self.assertEqual(point.getIndex(), i)
             self.assertEqual(store.getAdjacentPoints(point).getNumPoints(), 1)

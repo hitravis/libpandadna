@@ -29,7 +29,7 @@ class TestStorage(unittest.TestCase):
         num_visibles = store.getNumVisiblesInDNAVisGroup(0)
         self.assertEqual(num_visibles, 3)
 
-        for i in xrange(num_visibles):
+        for i in range(num_visibles):
             self.assertEqual(store.getVisibleName(0, i), "visible%d" % (i + 1))
 
         vg.removeVisible("visible2")

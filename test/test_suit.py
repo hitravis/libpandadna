@@ -98,20 +98,20 @@ class TestSuit(unittest.TestCase):
         if test:
             self.assertEqual(path.getNumPoints(), len(points))
 
-            for i in xrange(len(points)):
+            for i in range(len(points)):
                 self.assertEqual(path.getPoint(i), points[i])
                 self.assertEqual(path.getPointIndex(i), points[i].getIndex())
 
             path.reversePath()
 
-            for i in xrange(len(points)):
+            for i in range(len(points)):
                 self.assertEqual(path.getPoint(i), points[-i - 1])
                 self.assertEqual(path.getPointIndex(i), points[-i - 1].getIndex())
 
         return path
 
     def test_suit_path(self):
-        self.make_suit_path(range(10), test=True)
+        self.make_suit_path(list(range(10)), test=True)
 
     def test_suit_leg(self):
         # Test SuitLeg.getTypeName
@@ -132,11 +132,11 @@ class TestSuit(unittest.TestCase):
         # Generate and store 6 points
         # STREET_POINT(0, 0, 0) -> STREET_POINT(0, 10, 0) -> STREET_POINT(0, 20, 0) -> STREET_POINT(0, 30, 0) -> STREET_POINT(0, 40, 0)
         # -> FRONT_DOOR_POINT(0, 50, 0)
-        points = [self.make_suit_point(i, pos=(0, 10 * i, 0)) for i in xrange(5)]
+        points = [self.make_suit_point(i, pos=(0, 10 * i, 0)) for i in range(5)]
         for point in points:
             self.store.storeSuitPoint(point)
 
-        for i in xrange(4):
+        for i in range(4):
             self.store.storeSuitEdge(i, i + 1, 2000 + i)
 
         end_point = self.make_suit_point(5, type=DNASuitPoint.FRONT_DOOR_POINT, pos=(0, 50, 0),
@@ -156,7 +156,7 @@ class TestSuit(unittest.TestCase):
         # Test types
         self.assertEqual(leg_list.getNumLegs(), 8)
         self.assertEqual(leg_list.getLeg(0).getType(), SuitLeg.TFromSky)
-        for i in xrange(1, 5):
+        for i in range(1, 5):
             self.assertEqual(leg_list.getLeg(i).getType(), SuitLeg.TWalk)
 
         self.assertEqual(leg_list.getLeg(5).getType(), SuitLeg.TWalkFromStreet)
@@ -201,7 +201,7 @@ class TestSuit(unittest.TestCase):
             self.store.storeSuitPoint(point)
             path.addPoint(point)
 
-        for i in xrange(5):
+        for i in range(5):
             self.store.storeSuitEdge(i, i + 1, 2000 + i)
 
         leg_list = SuitLegList(path, self.store, SUIT_WALK_SPEED)
