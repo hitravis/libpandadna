@@ -1,4 +1,4 @@
-from .DNANode import DNANode
+from dna.components.DNANode import DNANode
 from dna.base.DNAPacker import *
 
 
@@ -18,13 +18,13 @@ class DNALandmarkBuilding(DNANode):
 
     def setWallColor(self, color):
         self.wallColor = color
-    
+
     def setTitle(self, title):
         self.title = title
-    
+
     def setArticle(self, article):
         self.article = article
-    
+
     def setBuildingType(self, buildingType):
         self.buildingType = buildingType
 

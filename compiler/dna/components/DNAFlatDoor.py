@@ -1,4 +1,4 @@
-from . import DNADoor
+from dna.components import DNADoor
 
 
 class DNAFlatDoor(DNADoor.DNADoor):

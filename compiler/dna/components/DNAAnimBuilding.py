@@ -1,4 +1,4 @@
-from . import DNALandmarkBuilding
+from dna.components import DNALandmarkBuilding
 from dna.base.DNAPacker import *
 
 
